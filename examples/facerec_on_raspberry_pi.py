@@ -7,14 +7,19 @@
 # https://gist.github.com/ageitgey/1ac8dbe8572f3f533df6269dab35df65
 
 import face_recognition
-import picamera
+#import picamera
 import numpy as np
-
+import cv2
 # Get a reference to the Raspberry Pi camera.
 # If this fails, make sure you have a camera connected to the RPi and that you
 # enabled your camera in raspi-config and rebooted first.
-camera = picamera.PiCamera()
-camera.resolution = (320, 240)
+
+camera = cv2.VideoCapture(0)
+
+
+
+#camera = picamera.PiCamera()
+#camera.resolution = (320, 240)
 output = np.empty((240, 320, 3), dtype=np.uint8)
 
 # Load a sample picture and learn how to recognize it.
